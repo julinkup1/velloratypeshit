@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buty - Vellora</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .product-item {
+      width: 250px;
+      margin: 15px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .product-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid #eee;
+    }
+
+    .product-item h3 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .product-item .price {
+      font-size: 18px;
+      color: #27ae60;
+      margin: 10px 0;
+    }
+
+    .product-item a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #27ae60;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .product-item a:hover {
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Buty - Vellora</h1>
+  </div>
+
+  <div class="product-list">
+    <!-- Produkt 1: Jordan 4 "Black Cat" -->
+    <div class="product-item">
+      <img src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/8975a7a6-c52b-4e4e-b2f7-76a660679b50/air-jordan-iv-black-cat-release-date.jpg" alt="Jordan 4 Black Cat">
+      <h3>Jordan 4 "Black Cat"</h3>
+      <p class="price"><del>49,99 zł</del> 29,99 zł</p>
+      <a href="black-cat.html">Zobacz szczegóły</a>
+    </div>
+
+    <!-- Produkt 2: Jordan 4 "Yellow Thunder" -->
+    <div class="product-item">
+      <img src="https://owcastore.pl/wp-content/uploads/2023/05/2-34.png" alt="Jordan 4 Yellow Thunder">
+      <h3>Jordan 4 "Yellow Thunder"</h3>
+      <p class="price"><del>49,99 zł</del> 29,99 zł</p>
+      <a href="yellow-thunder.html">Zobacz szczegóły</a>
+    </div>
+
+    <!-- Możesz dodać więcej produktów tutaj -->
+  </div>
+
+</body>
+</html>
