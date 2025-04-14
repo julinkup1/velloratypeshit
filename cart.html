@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Twój Koszyk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .cart-container {
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .cart-item-name {
+      font-size: 18px;
+    }
+
+    .cart-item-price {
+      color: #27ae60;
+      font-size: 18px;
+    }
+
+    .checkout-button {
+      background-color: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+    }
+
+    .checkout-button:hover {
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Twój Koszyk</h1>
+  </div>
+
+  <div class="cart-container" id="cart-container">
+    <!-- Produkty dodane do koszyka pojawią się tutaj -->
+  </div>
+
+  <div class="cart-container">
+    <button class="checkout-button" onclick="checkout()">Przejdź do płatności przez PayPal</button>
+  </div>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartContainer = document.getElementById('cart-container');
+
+      cartContainer.innerHTML = '';
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>Twój koszyk jest pusty.</p>';
+      } else {
+        cart.forEach(item => {
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+          cartItem.innerHTML = `
+            <span class="cart-item-name">${item.name}</span>
+            <span class="cart-item-price">${item.price} zł</span>
+          `;
+          cartContainer.appendChild(cartItem);
+        });
+      }
+    }
+
+    function checkout() {
+      // Zastąp poniższy link prawdziwym linkiem PayPal
+      window.location.href = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=julekrupa@gmail.com&item_name=Koszyk&amount=50.00&currency_code=PLN';
+    }
+
+    window.onload = loadCart;
+  </script>
+
+</body>
+</html>
