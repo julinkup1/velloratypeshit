@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jordan 4 "Black Cat"</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-detail {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .product-detail img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .product-info {
+      max-width: 500px;
+    }
+
+    .product-info h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .product-info p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .product-info .price {
+      font-size: 22px;
+      color: #27ae60;
+      margin: 20px 0;
+    }
+
+    .add-to-cart {
+      background-color: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .add-to-cart:hover {
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Jordan 4 "Black Cat"</h1>
+  </div>
+
+  <div class="product-detail">
+    <img src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/8975a7a6-c52b-4e4e-b2f7-76a660679b50/air-jordan-iv-black-cat-release-date.jpg" alt="Jordan 4 Black Cat">
+    <div class="product-info">
+      <h2>Jordan 4 "Black Cat"</h2>
+      <p>Buty Jordan 4 "Black Cat" to edycja charakteryzująca się wyjątkowym designem i klasycznym czarnym kolorem. Idealne dla fanów mody i sportowego stylu.</p>
+      <p class="price"><del>49,99 zł</del> 29,99 zł</p>
+      <button class="add-to-cart" onclick="addToCart('Jordan 4 Black Cat', 29.99)">Dodaj do koszyka</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(productName, productPrice) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: productName, price: productPrice });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Produkt dodany do koszyka!');
+    }
+  </script>
+
+</body>
+</html>
